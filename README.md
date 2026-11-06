@@ -1,21 +1,15 @@
-# Kratos CRM — Familienhelden
+# Kratos Mini-PC Einrichtung
 
-Öffentliches Repository für den Kratos-Quellcode und die Mini-PC-Anleitung.
+Dieses öffentliche Repository enthält Quellcode und Einrichtungsunterlagen für Kratos auf dem Mini-PC. Alle Dateien sind für jede Person im Internet sichtbar. Keine Kundendaten, Zugangsdaten, Tokens, privaten Schlüssel, Produktions-Exporte oder lokalen Datenbanken hinzufügen.
 
-- [Quellcode als ZIP herunterladen](kratos-crm-minipc-source.zip)
-- [Mini-PC-Anleitung](docs/mini-pc-server-setup.md)
+- [Server-Quellpaket herunterladen](kratos-crm-minipc-server-source-2026-11-06-v2.zip)
+- [Einrichtungsanleitung für den Mini-PC](docs/mini-pc-server-setup.md)
 
-## Quellcode auf dem Mini-PC holen
+## Stand
 
-Das GitHub-Repository enthält das Quellcode-Paket als ZIP. Klone das Paket-Repository und entpacke die ZIP in einen getrennten Quellcodeordner:
+Das Paket enthält die lokale, nur an Loopback gebundene Lese-API und ihren SQLite-Adapter. Eine synthetische Probe für Upload, Wiederholung, Sicherung, Wiederherstellung und Abruf lief am 6. November 2026 auf dem Entwicklungsrechner erfolgreich. Das Paket wurde noch nicht auf dem Mini-PC installiert oder verbunden.
 
-    git clone https://github.com/FAM12345654/kratos-crm-minipc.git C:\Kratos\github
-    Expand-Archive C:\Kratos\github\kratos-crm-minipc-source.zip -DestinationPath C:\Kratos\source
-    Set-Location C:\Kratos\source
-    pnpm install --frozen-lockfile --store-dir C:\Kratos\pnpm-store
+Die Sites/Vinext-Weboberfläche benötigt weiterhin Cloudflare D1 und Sites-Identität. Die lokale API ist kein eigenständiger Windows-CRM-Installer. Vor dem Start braucht sie eine passende lokale SQLite-Datenbank und eine geprüfte OAuth-Konfiguration. Das Paket enthält keine Kundendaten oder Produktionsdatenbank.
 
-## Status
+Die lokale API bindet ausschließlich an 127.0.0.1. Externes HTTPS, Microsoft-Anmeldung, Datenmigration, Windows-Dienst und Abnahme auf dem Mini-PC sind noch offen.
 
-Der aktuelle Quellcode ist die veröffentlichte Sites-Webanwendung mit Cloudflare D1. Er ist noch kein produktionsfertiger Windows-CRM-Server. Für sicheren Mini-PC-Produktivbetrieb müssen SQLite-Adapter, geschützte OAuth-Anmeldung, Graph-Token-Erneuerung, Dienstbetrieb sowie Backup und Wiederherstellung umgesetzt und geprüft werden.
-
-Keine echten Kundendaten, Zugangsdaten oder privaten Schlüssel in dieses öffentliche Repository laden.
