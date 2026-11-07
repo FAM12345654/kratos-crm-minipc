@@ -2,14 +2,24 @@
 
 Dieses öffentliche Repository enthält Quellcode und Einrichtungsunterlagen für Kratos auf dem Mini-PC. Alle Dateien sind für jede Person im Internet sichtbar. Keine Kundendaten, Zugangsdaten, Tokens, privaten Schlüssel, Produktions-Exporte oder lokalen Datenbanken hinzufügen.
 
+## Windows-Vorbereitung starten
+
+Auf dem Mini-PC PowerShell öffnen und diese Befehle ausführen:
+
+    New-Item -ItemType Directory -Path C:\Kratos -Force
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/FAM12345654/kratos-crm-minipc/main/Start-Kratos-Preflight.ps1" -OutFile C:\Kratos\Start-Kratos-Preflight.ps1
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Kratos\Start-Kratos-Preflight.ps1
+
+Das Skript prüft und lädt das veröffentlichte Quellpaket mit SHA-256-Prüfung herunter, installiert bei Bedarf Node.js LTS und pnpm, installiert Abhängigkeiten anhand der Lockdatei und führt die synthetische Probe aus. Es verändert keine vorhandenen Kratos-Ordner und startet keinen produktiven Dienst.
+
+- [Vorbereitungsskript ansehen](Start-Kratos-Preflight.ps1)
+- [Detaillierte Einrichtungsanleitung](docs/mini-pc-server-setup.md)
 - [Server-Quellpaket herunterladen](kratos-crm-minipc-server-source-2026-11-06-v2.zip)
-- [Einrichtungsanleitung für den Mini-PC](docs/mini-pc-server-setup.md)
 
-## Stand
+## Was noch nicht bereit ist
 
-Das Paket enthält die lokale, nur an Loopback gebundene Lese-API und ihren SQLite-Adapter. Eine synthetische Probe für Upload, Wiederholung, Sicherung, Wiederherstellung und Abruf lief am 6. November 2026 auf dem Entwicklungsrechner erfolgreich. Das Paket wurde noch nicht auf dem Mini-PC installiert oder verbunden.
+Das Quellpaket enthält eine lokale, nur an Loopback gebundene Lese-API und ihren SQLite-Adapter. Es ist kein eigenständiger Windows-CRM-Installer. Die API benötigt eine passende lokale SQLite-Datenbank und ein geprüftes OAuth-Profil. Das Paket erstellt oder migriert diese Datenbank nicht. Der lokale Miniflare-Zustand ist keine operative SQLite-Datenbank.
 
-Die Sites/Vinext-Weboberfläche benötigt weiterhin Cloudflare D1 und Sites-Identität. Die lokale API ist kein eigenständiger Windows-CRM-Installer. Vor dem Start braucht sie eine passende lokale SQLite-Datenbank und eine geprüfte OAuth-Konfiguration. Das Paket enthält keine Kundendaten oder Produktionsdatenbank.
+Die Sites/Vinext-Weboberfläche benötigt weiterhin Cloudflare D1 und Sites-Identität. Externes HTTPS, Microsoft-Anmeldung, Datenmigration, Windows-Dienst, ChatGPT-/Mobilzugriff und Abnahme auf dem Mini-PC sind noch offen. Die API ist nicht von anderen Geräten erreichbar. Keine Routerfreigaben und keinen Dokumenten-Upload oder Schreibzugriff aktivieren.
 
-Die lokale API bindet ausschließlich an 127.0.0.1. Externes HTTPS, Microsoft-Anmeldung, Datenmigration, Windows-Dienst und Abnahme auf dem Mini-PC sind noch offen.
-
+Die Vorbereitung erzeugt keine Kundendaten und greift nicht auf OneDrive, Produktions-D1 oder Kundenordner zu. Sie ist kein signiertes oder getaggtes Software-Release.
