@@ -24,6 +24,8 @@ Verhindere Sync-Schleifen und Mehrfachimporte mit einer stabilen Dokument-ID und
 
 ### Kundenliste
 
+**Befund zur bestehenden Ansicht (veröffentlichte Version 25):** Die aktuelle Oberfläche ist sauber und gut lesbar. Im ersten Bildschirm dominieren jedoch manuelle Anlage, Kundenimport und OneDrive-Linkpflege; die Kundensuche beginnt erst weiter unten. Für die neue Oberfläche muss die Kundenliste mit Suche der primäre Startpunkt sein. Import- und Ordnerpflege gehören in einen eingeklappten Verwaltungsbereich oder eine separate Admin-Aktion und dürfen die tägliche Kundenarbeit nicht nach unten verdrängen.
+
 - Zeige die bestehende Kundenübersicht mit Suche und sinnvollen Filtern.
 - Die Zeile bzw. Karte zeigt die vorhandenen Kerndaten und einen kompakten Überblick über aktive Vertragssparten.
 - Auswahl eines Eintrags öffnet ein eigenes Kundenprofil; die Profilansicht bleibt eindeutig diesem Kunden zugeordnet.
