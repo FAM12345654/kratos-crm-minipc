@@ -10,7 +10,7 @@ Auf dem Mini-PC PowerShell öffnen und diese Befehle ausführen:
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/FAM12345654/kratos-crm-minipc/main/Start-Kratos-Preflight.ps1" -OutFile C:\Kratos\Start-Kratos-Preflight.ps1
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Kratos\Start-Kratos-Preflight.ps1
 
-Das Skript prüft und lädt das veröffentlichte Quellpaket mit SHA-256-Prüfung herunter, installiert bei Bedarf Node.js LTS und pnpm, installiert Abhängigkeiten anhand der Lockdatei und führt die synthetische Probe aus. Es verändert keine vorhandenen Kratos-Ordner und startet keinen produktiven Dienst.
+Das Skript prüft und lädt das veröffentlichte Quellpaket mit SHA-256-Prüfung, installiert bei Bedarf Node.js LTS und pnpm, installiert Abhängigkeiten anhand der Lockdatei und führt die synthetische Probe aus. Es verändert keine vorhandenen Kratos-Ordner und startet keinen produktiven Dienst.
 
 - [Vorbereitungsskript ansehen](Start-Kratos-Preflight.ps1)
 - [Detaillierte Einrichtungsanleitung](docs/mini-pc-server-setup.md)
@@ -29,6 +29,7 @@ Falls das Repository am Mini-PC nicht lokal geöffnet ist, kann der lokale GPT d
 ## Nächster Arbeitsschritt
 
 - [Dauerbetrieb, sicherer Fernzugriff und Chat-Synchronisierung](docs/mini-pc-dauerbetrieb-fernwartung-chat-sync.md)
+- [ChatGPT-Anbindung über Secure MCP Tunnel und Prüfliste für zuhause](docs/chatgpt-tunnel-handoff.md)
 
 ## Interface-Ausbau
 
