@@ -26,7 +26,7 @@ Secure MCP Tunnel benötigt eine Tunnel-ID und einen Runtime-API-Schlüssel. Der
 
 ## Ablauf, wenn Phips wieder am Mini-PC ist
 
-1. **Nur lokale Bestandsaufnahme:** Windows-Version, vorhandene Kratos-Ordner/Dienste, Branch/Dateistand und freier Speicher prüfen. Bestehende Dateien nicht überschreiben.
+1. **Nur lokale Bestandsaufnahme:** `Get-Kratos-MiniPcReadiness.ps1` meldet Windows-Version, Gerätemodell, freien C:-Speicher, Energieprofil, Schlafzeitlimits sowie passende Prozesse/Dienste und nur die Anzahl der Einträge in `C:\\Kratos`. Das Skript liest keine Dateiinhalte und ändert keine Einstellungen. Git-Branch und Arbeitsbaum danach separat prüfen; bestehende Dateien nicht überschreiben.
 2. **Synthetische Vorbereitung:** vorhandenes Preflight-Skript ausführen und die synthetische Probe prüfen. Keine Produktionsdatenbank öffnen oder migrieren.
 3. **Kontofähigkeit klären:** In ChatGPT prüfen, ob „Benutzerdefinierten MCP-Server hinzufügen“ im verwendeten Plan/Workspace verfügbar ist. In OpenAI Platform Tunnel-ID und Runtime-Schlüssel anlegen oder vorhandene Berechtigungen prüfen.
 4. **Lokalen Gateway konfigurieren:** nur eine bestehende Datenbank verwenden; Authentifizierungsprofil, Ressource, Scope und erlaubte Benutzer-ID ausdrücklich festlegen. Keine echte Datenbank automatisch erzeugen oder migrieren.
