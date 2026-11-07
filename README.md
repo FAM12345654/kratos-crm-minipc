@@ -13,6 +13,7 @@ Auf dem Mini-PC PowerShell öffnen und diese Befehle ausführen:
 Das Skript prüft und lädt das veröffentlichte Quellpaket mit SHA-256-Prüfung, installiert bei Bedarf Node.js LTS und pnpm, installiert Abhängigkeiten anhand der Lockdatei und führt die synthetische Probe aus. Es verändert keine vorhandenen Kratos-Ordner und startet keinen produktiven Dienst.
 
 - [Vorbereitungsskript ansehen](Start-Kratos-Preflight.ps1)
+- [Read-only-Bestandsaufnahme für den Mini-PC](Get-Kratos-MiniPcReadiness.ps1)
 - [Detaillierte Einrichtungsanleitung](docs/mini-pc-server-setup.md)
 - [Server-Quellpaket herunterladen](kratos-crm-minipc-server-source-2026-11-06-v2.zip)
 
