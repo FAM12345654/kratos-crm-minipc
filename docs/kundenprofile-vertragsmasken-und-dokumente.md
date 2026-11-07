@@ -36,6 +36,16 @@ Gliedere die Ansicht klar in Kundendaten, Verträge, Dokumente und offene Vorgä
 
 Jede Vertragskarte lässt sich aufklappen. Der aufgeklappte Bereich zeigt ausschließlich die Felder der jeweiligen Sparte. Werte müssen direkt kopiert werden können. „Bearbeiten“ oder „Vertrag hinzufügen“ öffnet die passende Spartemaske; Speichern und Abbrechen sind klar getrennt.
 
+### Schrittweise geteilte Ansicht auf dem Desktop
+
+Die Navigation soll sich in mehrere dauerhaft sichtbare Bereiche öffnen, statt Inhalte in einem losgelösten Dialog zu verstecken:
+
+1. **Start:** Kundenliste als Hauptansicht.
+2. **Kunde ausgewählt:** Kundenliste schiebt sich nach links in eine schmale, etwa ein Achtel der verfügbaren Breite belegende Leiste. Namen bleiben lesbar und der aktive Kunde ist markiert. Daneben erscheint das vollständige Kundenprofil.
+3. **Vertrag ausgewählt:** Die Ansicht teilt sich in drei gleichzeitig sichtbare Spalten: ungefähr ein Viertel für die scrollbare Kundenleiste, ein Viertel für das geöffnete Kundenprofil und die Hälfte für den ausgewählten Vertrag samt Spartendaten und Dokument.
+4. Bereits geöffnete Ebenen bleiben links sichtbar und verschieben sich beim Öffnen der nächsten Ebene. Auswahl, Scrollposition und Formularentwürfe bleiben bei der Navigation erhalten. Zurück-Navigation führt jeweils eine Ebene zurück.
+5. Die Prozentwerte sind Zielverhältnisse, keine festen Pixelwerte. Spalten müssen frei von Überlagerungen bleiben. Kundennamen und wichtige Felder dürfen nicht abgeschnitten werden; bei schmalen Fenstern soll die Oberfläche auf eine gut bedienbare Einzelfenster-Navigation wechseln.
+
 ### Spartenspezifische Masken
 
 Lege getrennte, erweiterbare Feldschemata an. Die folgenden Felder sind ein fachlicher Mindestumfang; beim Implementieren sind vorhandene Datenmodelle und Versicherungsprodukte zu prüfen. Felder, die bei konkreten Produkten nicht anwendbar sind, nicht erzwingen.
