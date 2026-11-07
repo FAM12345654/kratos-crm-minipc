@@ -20,6 +20,29 @@ Jedes hochgeladene Vertragsdokument soll nach erfolgreichem Import in beiden pri
 
 Verhindere Sync-Schleifen und Mehrfachimporte mit einer stabilen Dokument-ID und Prüfsumme. Wiederholtes Hochladen derselben Datei soll idempotent sein. Bei Bearbeitung eine neue Version anlegen und die Beziehung zur Vorgängerversion behalten; keine Kopie stillschweigend überschreiben. Löschen aus einer der beiden Ablagen darf nicht automatisch die andere Kopie löschen. Ein Löschvorgang braucht eine ausdrückliche Nutzeraktion und einen nachvollziehbaren Status.
 
+## Vergleich mit anderen CRM-Oberflächen
+
+Dieser Abschnitt fasst öffentlich dokumentierte Bedienmuster zusammen. Er übernimmt keine Produktgestaltung eins zu eins; die Empfehlungen für KRATOS sind eine Ableitung aus den Mustern und den Anforderungen von Familienhelden.
+
+| CRM | Öffentlich dokumentiertes Muster | Was KRATOS übernehmen kann |
+|---|---|---|
+| **HubSpot** | Datensatzseite mit linker Leiste, mittlerem Arbeitsbereich und rechter Leiste für verknüpfte Datensätze/Anhänge. Informationen liegen in eigenen Karten und Tabs. | Stammdaten, Aktivitäten, Verträge und Dokumente klar nach Zweck trennen; verknüpfte Verträge erreichbar halten. |
+| **Attio** | Datensatz-Vorschau öffnet neben Tabellen- oder Kanbanliste, hält den ausgewählten Eintrag markiert und lässt die Vorschau in der Breite verändern. Eine eigene vollständige Profilseite bleibt zusätzlich verfügbar. | Kundenliste sichtbar lassen, den gewählten Kunden daneben öffnen und zur Vollansicht erweitern; Spaltenbreiten anpassbar machen. |
+| **Pipedrive** | Detailseiten haben getrennte Bereiche für Zusammenfassung, Felder und verknüpfte Datensätze. Seitenbereiche können ein-/ausgeblendet, sortiert und eingeklappt werden; leere Felder lassen sich ausblenden. | Vertragssparten als klar getrennte, aufklappbare Bereiche darstellen und die Ansicht bei Bedarf auf wichtige bzw. ausgefüllte Felder reduzieren. |
+| **Salesforce** | Datensatzseiten stellen Kerndaten im Kopfbereich bereit und gruppieren Details, Aktivitäten und verknüpfte Listen in Tabs/Abschnitten. | Nur die wichtigsten Kunden- und Vertragsaktionen sofort zeigen; selten genutzte Verwaltungsdetails nicht in den Vordergrund stellen. |
+
+### Abgeleitete Gestaltungsregeln für KRATOS
+
+- Die Kundenliste mit Suche bleibt als dauerhafte Navigation erhalten. Namen und Auswahl bleiben auch bei geöffnetem Profil lesbar.
+- Eine Kundenauswahl öffnet das Profil neben der Liste. Eine Vertragsauswahl ergänzt einen dritten, breiteren Arbeitsbereich, ohne die vorherigen Ebenen zu schließen.
+- Das Zielverhältnis orientiert sich grob an „Liste : Kundenprofil : Vertragsdetails = 1 : 1 : 2“, wird aber nicht auf feste Prozentwerte gezwungen. Die Breite passt sich dem Fenster an und darf auf Desktop sinnvoll verstellbar sein.
+- Die Vertragsdetails bekommen den größten nutzbaren Bereich. Kundenname, aktive Sparte und zurückführende Navigation bleiben sichtbar.
+- Bei begrenzter Fensterbreite auf eine Ebene nach der anderen wechseln, mit klarer Zurück-Navigation. Keine unlesbar schmalen Drei-Spaltenansicht erzwingen.
+- Import und OneDrive-Verwaltung bleiben Nebenaktionen; sie verdrängen weder Kundensuche noch Kundenliste aus der Startansicht.
+- Leere oder seltene Felder bei Bedarf ausblendbar machen. Feldnamen, manuelles Ergänzen, Bearbeiten und Spartennotizen bleiben leicht erreichbar.
+
+**Quellen:** HubSpot — https://knowledge.hubspot.com/records/work-with-records ; Attio — https://attio.com/help/reference/managing-your-data/records/create-and-view-records ; Pipedrive — https://support.pipedrive.com/en/article/detail-view-sidebar ; Salesforce — https://help.salesforce.com/s/articleView?id=sf.accessibility_screen_reader.htm&language=en_US&type=5
+
 ## Nutzerablauf und Oberfläche
 
 ### Kundenliste
