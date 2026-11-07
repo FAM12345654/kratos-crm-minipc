@@ -16,6 +16,16 @@ Das Skript prüft und lädt das veröffentlichte Quellpaket mit SHA-256-Prüfung
 - [Detaillierte Einrichtungsanleitung](docs/mini-pc-server-setup.md)
 - [Server-Quellpaket herunterladen](kratos-crm-minipc-server-source-2026-11-06-v2.zip)
 
+## Auf dem Mini-PC abholen
+
+Falls das Repository am Mini-PC nicht lokal geöffnet ist, kann der lokale GPT die Checkliste über PowerShell in einen eigenen Unterordner laden. Der Befehl bricht ab, wenn die Zieldatei schon existiert, und überschreibt daher keine vorhandene Datei:
+
+    New-Item -ItemType Directory -Path C:\Kratos\handoff -Force
+    $taskFile = "C:\Kratos\handoff\mini-pc-dauerbetrieb-fernwartung-chat-sync.md"
+    if (Test-Path $taskFile) { throw "Zieldatei existiert bereits; erst prüfen, nicht überschreiben." }
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/FAM12345654/kratos-crm-minipc/main/docs/mini-pc-dauerbetrieb-fernwartung-chat-sync.md" -OutFile $taskFile
+    Get-Content -LiteralPath $taskFile
+
 ## Nächster Arbeitsschritt
 
 - [Dauerbetrieb, sicherer Fernzugriff und Chat-Synchronisierung](docs/mini-pc-dauerbetrieb-fernwartung-chat-sync.md)
