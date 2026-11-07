@@ -30,6 +30,10 @@ Falls das Repository am Mini-PC nicht lokal geöffnet ist, kann der lokale GPT d
 
 - [Dauerbetrieb, sicherer Fernzugriff und Chat-Synchronisierung](docs/mini-pc-dauerbetrieb-fernwartung-chat-sync.md)
 
+## Interface-Ausbau
+
+- [Kundenprofile, Vertragsmasken und doppelte Dokumentablage](docs/kundenprofile-vertragsmasken-und-dokumente.md)
+
 ## Was noch nicht bereit ist
 
 Das Quellpaket enthält eine lokale, nur an Loopback gebundene Lese-API und ihren SQLite-Adapter. Es ist kein eigenständiger Windows-CRM-Installer. Die API benötigt eine passende lokale SQLite-Datenbank und ein geprüftes OAuth-Profil. Das Paket erstellt oder migriert diese Datenbank nicht. Der lokale Miniflare-Zustand ist keine operative SQLite-Datenbank.
